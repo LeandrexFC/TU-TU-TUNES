@@ -8,10 +8,16 @@ class Search extends Component {
   state = {
     artist: '',
     savedArtistName: '',
+    savedAlbumName: '',
     isLoading: false,
     arrayOfArtist: [],
     errorMessage: false,
   };
+
+  componentDidMount() {
+    const { savedAlbumName } = this.state;
+    localStorage.setItem('savedAlbumName', savedAlbumName);
+  }
 
   onButtonClick = async () => {
     const { artist } = this.state;
@@ -19,13 +25,13 @@ class Search extends Component {
       isLoading: true,
     });
     const json = await searchAlbumsAPI(artist);
-    console.log(await searchAlbumsAPI('anitta'));
     const validation = json.length <= 1;
 
     this.setState({
       artist: '',
       isLoading: false,
       savedArtistName: artist,
+      savedAlbumName: '',
       arrayOfArtist: json,
       errorMessage: validation,
     });
@@ -46,9 +52,19 @@ class Search extends Component {
     return validation;
   };
 
+  handleLink = (event) => {
+    const { id } = event.target;
+
+    this.setState({
+      savedAlbumName: id,
+    });
+  };
+
   render() {
     const { artist, isLoading, savedArtistName, arrayOfArtist,
-      errorMessage } = this.state;
+      errorMessage, savedAlbumName } = this.state;
+    localStorage.setItem('savedAlbumName', savedAlbumName);
+
     return (
       <div>
         <Header />
@@ -110,10 +126,12 @@ class Search extends Component {
           <ul>
             {arrayOfArtist.map((albums) => (
               <>
-                <li key={ albums.collectionId }>{albums.artistName}</li>
+                <li key={ albums.collectionName }>{albums.artistName}</li>
                 <Link
                   data-testid={ `link-to-album-${albums.collectionId}` }
+                  id={ albums.collectionId }
                   to={ `/album/${albums.collectionId}` }
+                  onClick={ this.handleLink }
                 >
                   { albums.collectionName }
 
@@ -126,7 +144,6 @@ class Search extends Component {
             Nenhum álbum foi encontrado
           </p>
         )}
-
       </div>
     );
   }
