@@ -19,8 +19,8 @@ class MusicCard extends Component {
     const resultsChecked = savedMusics.find((favorite) => favorite.trackId
     === id);
 
-    const validateType = typeof resultsChecked;
-    const finalResults = validateType ? 'undefined' === false : resultsChecked;
+    // const validateType = typeof resultsChecked;
+    // const finalResults = validateType ? 'undefined' === false : resultsChecked;
 
     this.setState({
       isLoading: false,
