@@ -37,6 +37,7 @@ class Album extends Component {
           { fullAlbum.map((music) => (<MusicCard
             key={ music.trackName }
             music={ music }
+            id={ music.trackId }
           />)) }
         </div>
       </>
