@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { addSong, getFavoriteSongs } from '../services/favoriteSongsAPI';
+import { addSong, getFavoriteSongs, removeSong } from '../services/favoriteSongsAPI';
 import Loading from '../pages/Loading';
 
 class MusicCard extends Component {
@@ -12,11 +12,16 @@ class MusicCard extends Component {
   async componentDidMount() {
     this.setState({
       isLoading: true,
+      checked: false,
     });
     const { id } = this.props;
     const savedMusics = await getFavoriteSongs();
     const resultsChecked = savedMusics.find((favorite) => favorite.trackId
     === id);
+
+    const validateType = typeof resultsChecked;
+    const finalResults = validateType ? 'undefined' === false : resultsChecked;
+
     this.setState({
       isLoading: false,
       checked: resultsChecked,
@@ -25,14 +30,33 @@ class MusicCard extends Component {
 
   handleFavorites = async () => {
     const { music } = this.props;
+    const { checked } = this.state;
+    const results = checked === false;
+
     this.setState({
       isLoading: true,
     });
-    await addSong(music);
-    this.setState({
-      isLoading: false,
-      checked: true,
-    });
+
+    if (!checked) {
+      await addSong(music);
+
+      this.setState({
+        isLoading: false,
+      });
+
+      this.setState({
+        checked: results,
+      });
+    } else {
+      this.setState({
+        isLoading: true,
+      });
+      await removeSong(music);
+      this.setState({
+        isLoading: false,
+        checked: results,
+      });
+    }
   };
 
   render() {
