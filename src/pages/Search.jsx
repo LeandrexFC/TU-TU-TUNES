@@ -19,7 +19,9 @@ class Search extends Component {
     localStorage.setItem('savedAlbumName', savedAlbumName);
   }
 
-  onButtonClick = async () => {
+  onButtonClick = async (e) => {
+    e.preventDefault();
+
     const { artist } = this.state;
     this.setState({
       isLoading: true,
@@ -81,7 +83,7 @@ class Search extends Component {
               />
               <input
                 data-testid="search-artist-button"
-                type="button"
+                type="submit"
                 value="Pesquisar"
                 disabled={ !this.validateForm() }
                 onClick={ this.onButtonClick }
@@ -126,7 +128,7 @@ class Search extends Component {
           <ul>
             {arrayOfArtist.map((albums) => (
               <>
-                <li key={ albums.collectionName }>{albums.artistName}</li>
+                <li key={ albums.collectionId }>{albums.artistName}</li>
                 <Link
                   data-testid={ `link-to-album-${albums.collectionId}` }
                   id={ albums.collectionId }
