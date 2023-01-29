@@ -3,6 +3,7 @@ import Header from '../Components/Header';
 import MusicCard from '../Components/MusicCard';
 import { getFavoriteSongs } from '../services/favoriteSongsAPI';
 import Loading from './Loading';
+import '../css/Favorites.css';
 
 class Favorites extends Component {
   state = {
@@ -28,8 +29,11 @@ class Favorites extends Component {
     const { favoritesSongs, isLoading } = this.state;
     return (
       <>
-        <Header />
-        <div data-testid="page-favorites">
+        <div className="allPageFavorites">
+          <Header />
+          <h1 className="favoriteTitle"> Músicas Favoritas </h1>
+        </div>
+        <div data-testid="page-favorites" className="page-favorites">
           {isLoading ? (
             <Loading />
           ) : (
@@ -41,6 +45,7 @@ class Favorites extends Component {
             />))
 
           )}
+
         </div>
       </>
     );

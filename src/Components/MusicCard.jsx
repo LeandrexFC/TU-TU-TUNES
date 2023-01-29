@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHeart, faHeartCircleCheck } from '@fortawesome/free-solid-svg-icons';
 import { addSong, getFavoriteSongs, removeSong } from '../services/favoriteSongsAPI';
 import Loading from '../pages/Loading';
+import '../css/Album.css';
 
 class MusicCard extends Component {
   state = {
@@ -12,6 +15,7 @@ class MusicCard extends Component {
   async componentDidMount() {
     this.setState({
       isLoading: true,
+
     });
     const { id } = this.props;
     const savedMusics = await getFavoriteSongs();
@@ -29,7 +33,6 @@ class MusicCard extends Component {
     const { checked } = this.state;
 
     this.setState({
-      isLoading: true,
       checked: !checked,
     });
 
@@ -38,10 +41,6 @@ class MusicCard extends Component {
     } else {
       await removeSong(music);
     }
-
-    this.setState({
-      isLoading: false,
-    });
   };
 
   render() {
@@ -49,32 +48,35 @@ class MusicCard extends Component {
     const { isLoading, checked } = this.state;
     const { trackName, previewUrl, trackId } = music;
     return (
-      <>
-        <p>
+      <div className="allAlbumsCard">
+        <p className="songName">
           { trackName }
         </p>
-        <audio data-testid="audio-component" src={ previewUrl } controls>
-          <track kind="captions" />
+        <audio
+          data-testid="audio-component"
+          src={ previewUrl }
+          controls
+          className="songCard"
+        >
+          <track kind="captions" className="songCard" />
           O seu navegador não suporta o elemento
-          <code>audio</code>
+          <code className="songCard">audio</code>
           .
         </audio>
         {
           isLoading ? <Loading /> : (
-            <label htmlFor="favorites">
-              Favorita
-              <input
-                onChange={ () => {} }
-                type="checkbox"
-                checked={ checked }
-                name="favorites"
-                data-testid={ `checkbox-music-${trackId}` }
-                onClick={ this.handleFavorites }
-              />
-            </label>
+            <FontAwesomeIcon
+              icon={ checked ? faHeartCircleCheck : faHeart }
+              onChange={ () => {} }
+              type="checkbox"
+              checked={ checked }
+              name="favorites"
+              data-testid={ `checkbox-music-${trackId}` }
+              onClick={ this.handleFavorites }
+            />
           )
         }
-      </>
+      </div>
     );
   }
 }

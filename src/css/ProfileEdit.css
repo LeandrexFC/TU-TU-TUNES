@@ -1,0 +1,63 @@
+.allProfileEdit {
+  /* border: green solid 5px; */
+  z-index: 3;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  max-height: 220px;
+  left: 250px;
+  top: 0px;
+  background: url('../images/29.png') no-repeat bottom center scroll;
+  background-position: 30% 105%;
+  background-size: cover;
+}
+
+.page-profile-edit {
+  height: 100%;
+  width: 80%;
+  margin-left: 40vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40vh;
+  background: #EFF3F9;
+}
+
+.input {
+  margin-left: 7px;
+}
+
+.btnEdit {
+  color: white;
+  background-color: #00CED1;
+  border-radius: 10%;
+}
+
+.btnEdit:hover {
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+@media (max-width: 500px) { 
+  .allProfileEdit {
+    z-index: 3;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* position: fixed; */
+    height: 100vh;
+    width: 100%;
+    /* max-width: 1030px; */
+    max-height: 220px;
+    left: 180px;
+    top: 0px;
+    background: url('../images/29.png') no-repeat bottom center scroll;
+    background-position: 30% 105%;
+    background-size: cover;
+  }
+
+}

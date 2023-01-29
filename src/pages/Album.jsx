@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Header from '../Components/Header';
 import MusicCard from '../Components/MusicCard';
 import getMusics from '../services/musicsAPI';
+import '../css/Album.css';
 
 class Album extends Component {
   state = {
@@ -19,21 +20,29 @@ class Album extends Component {
       fullAlbum: fullAlbum.slice(1),
       savedAlbumName: fullAlbum[0].collectionName,
       savedArtistname: fullAlbum[0].artistName,
+      savedAlbumImg: fullAlbum[0].artworkUrl100,
     });
   }
 
   render() {
-    const { savedAlbumName, savedArtistname, fullAlbum } = this.state;
+    const { savedAlbumName, savedArtistname, fullAlbum, savedAlbumImg } = this.state;
     return (
       <>
-        <Header />
-        <div data-testid="page-album">
-          <p data-testid="artist-name">
-            { savedArtistname }
-          </p>
-          <p data-testid="album-name">
-            { savedAlbumName }
-          </p>
+        <div className="albums">
+          <Header />
+        </div>
+        <div className="allAlbum-top">
+          <img src={ savedAlbumImg } alt="albumimg" className="renderAlbum" />
+          <div className="albumtopP">
+            <p data-testid="artist-name" className="artist-name">
+              { savedArtistname }
+            </p>
+            <p data-testid="album-name" className="album-name">
+              { savedAlbumName }
+            </p>
+          </div>
+        </div>
+        <div data-testid="page-album" className="page-album">
           { fullAlbum.map((music) => (<MusicCard
             key={ music.collectionName }
             music={ music }

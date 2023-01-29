@@ -1,0 +1,94 @@
+.albums {
+  z-index: 3;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  max-height: 250px;
+  left: 250px;
+  top: 0px;
+  background: url('../images/29.png') no-repeat bottom center scroll;
+  background-position: 30% 105%;
+  background-size: cover;
+}
+
+.allAlbum-top {
+  z-index: 3;
+  position: fixed;
+  display: flex;
+  justify-content: flex-start;
+  height: 100%;
+  max-width: 100%;
+  max-height: 220px;
+  left: 35vh;
+  margin-top: 10vh;
+  flex-direction: row;
+  align-items: center;
+}
+
+.renderAlbum {
+  margin-left: 20vh;
+  height: 200px;
+  width: 200px;
+}
+
+
+.page-album {
+  display: flex;
+  flex-direction: column;
+  margin-top: 50vh;
+  position: absolute;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  max-height: 250px;
+  left: 25vh;
+}
+
+ .albumtopP {
+  margin-left: 5vh;
+  display: flex;
+  flex-direction: column;
+  color: white;
+} 
+
+.artist-name {
+  font-size: 25px;
+}
+
+.album-name {
+  font-size: 20px;
+}
+
+audio {
+  margin-bottom: 60px;
+}
+
+.allAlbumsCard {
+  display: flex;
+  align-items: stretch;
+}
+
+@media (max-width: 500px) { 
+  .albums {
+    z-index: 3;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* position: fixed; */
+    height: 100vh;
+    width: 100%;
+    /* max-width: 1030px; */
+    max-height: 220px;
+    left: 180px;
+    top: 0px;
+    background: url('../images/29.png') no-repeat bottom center scroll;
+    background-position: 30% 105%;
+    background-size: cover;
+  }
+
+}

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Header from '../Components/Header';
 import searchAlbumsAPI from '../services/searchAlbumsAPI';
 import Loading from './Loading';
+import '../css/Search.css';
 
 class Search extends Component {
   state = {
@@ -70,12 +71,13 @@ class Search extends Component {
     return (
       <div>
         <Header />
-        <div data-testid="page-search">
+        <div data-testid="page-search" className="page-search">
           {!isLoading ? (
             <form>
               <input
                 data-testid="search-artist-input"
-                placeholder="Artista:"
+                className="inputSearch"
+                placeholder="NOME DO ARTISTA"
                 type="text"
                 name="artist"
                 value={ artist }
@@ -83,6 +85,7 @@ class Search extends Component {
               />
               <input
                 data-testid="search-artist-button"
+                className="inputButtonSearch"
                 type="submit"
                 value="Pesquisar"
                 disabled={ !this.validateForm() }
@@ -113,23 +116,30 @@ class Search extends Component {
               </div>
             </>
           )}
-          {savedArtistName.length > 1 ? (
-            <p>
-              Resultado de álbuns de:
-              {'  '}
-              {savedArtistName}
-            </p>
-          ) : (
-            <>
-            </>
-          )}
         </div>
+        {savedArtistName.length > 1 ? (
+          <p className="pResults">
+            Resultado de álbuns de:
+            {'  '}
+            {savedArtistName}
+          </p>
+        ) : (
+          <>
+          </>
+        )}
         {!errorMessage ? (
-          <ul>
+          <ul className="searchAlbums">
             {arrayOfArtist.map((albums) => (
-              <>
-                <li key={ albums.collectionId }>{albums.artistName}</li>
+              <div key={ albums.collectionId } className="eachCard">
+                <li
+                  key={ albums.collectionId }
+                  className="allArtistCard"
+                >
+                  {albums.artistName}
+
+                </li>
                 <Link
+                  className="collectionId"
                   data-testid={ `link-to-album-${albums.collectionId}` }
                   id={ albums.collectionId }
                   to={ `/album/${albums.collectionId}` }
@@ -138,8 +148,12 @@ class Search extends Component {
                   { albums.collectionName }
 
                 </Link>
-                <img src={ albums.artworkUrl100 } alt={ albums.artistName } />
-              </>))}
+                <img
+                  src={ albums.artworkUrl100 }
+                  alt={ albums.artistName }
+                  className="cardImg"
+                />
+              </div>))}
           </ul>
         ) : (
           <p>

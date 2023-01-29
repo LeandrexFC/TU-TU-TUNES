@@ -1,0 +1,126 @@
+html {
+  background: #EFF3F9;
+}
+
+.page-search {
+  z-index: 3;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* position: fixed; */
+  height: 100vh;
+  width: 100%;
+  /* max-width: 1030px; */
+  max-height: 220px;
+  left: 250px;
+  top: 0px;
+  background: url('../images/29.png') no-repeat bottom center scroll;
+  background-position: 30% 105%;
+  background-size: cover;
+}
+
+
+.inputSearch {
+  padding: 15px;
+  color: white;
+  max-width: 400px;
+  max-height: 40px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 23px;
+  margin-right: 5vh;
+}
+
+.inputSearch::placeholder {
+  color: white;
+}
+
+.inputButtonSearch {
+  width: 130px;
+  color: white;
+  max-width: 114px;
+  max-height: 40px;
+  background: #00D5E2;
+  border-radius: 23px;
+}
+
+.inputButtonSearch:hover {
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+.eachCard {
+  display: flex;
+  flex-direction: column-reverse;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.searchAlbums {
+  /* grid-gap: 20px; */
+  display: grid;
+  grid-template-columns: repeat(3, 200px);
+  gap: 120px;
+  position: absolute;
+  left: 50vh;
+  top: 55vh;
+  background: #EFF3F9;
+}
+
+.cardImg {
+  height: 200px;
+  width: 200px;
+}
+
+
+.pResults {
+  position: absolute;
+  width: 337.2px;
+  height: 24.89px;
+  top: 37vh;
+  right: 50vh;
+  font-family: 'Epilogue';
+  font-style: italic;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 20px;
+  text-align: center;
+
+   color: #003BE5;
+}
+
+.collectionId {
+  color: #3D495C;
+  font-size: 20px;
+  text-transform: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.allArtistCard {
+  list-style: none;
+}
+
+@media (max-width: 500px) { 
+  .page-search {
+    z-index: 3;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* position: fixed; */
+    height: 100vh;
+    width: 100%;
+    /* max-width: 1030px; */
+    max-height: 220px;
+    left: 180px;
+    top: 0px;
+    background: url('../images/29.png') no-repeat bottom center scroll;
+    background-position: 30% 105%;
+    background-size: cover;
+  }
+
+}

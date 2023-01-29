@@ -1,17 +1,26 @@
 import React, { Component } from 'react';
-import { Redirect } from 'react-router-dom';
-import Loading from './Loading';
+import PropTypes from 'prop-types';
+// import Loading from './Loading';
 import { createUser } from '../services/userAPI';
-// import trybetunes from '../images/trybetunes.png';
+// import trybetunes from '../images/29.png';
+import logo from '../images/logo.png';
+import '../css/Login.css';
 
 class Login extends Component {
   state = {
     name: '',
     isLoading: false,
-    redirect: false,
   };
 
-  handleUserApi = async () => {
+  componentDidMount() {
+    const test = localStorage.getItem('user');
+
+    console.log(test.name);
+  }
+
+  handleUserApi = async (e) => {
+    e.preventDefault();
+    const { history } = this.props;
     this.setState({
       isLoading: true,
     });
@@ -19,8 +28,9 @@ class Login extends Component {
     const { name } = this.state;
     await createUser({ name });
 
+    history.push('/search');
+
     this.setState({
-      redirect: true,
       isLoading: false,
     });
   };
@@ -34,50 +44,63 @@ class Login extends Component {
   };
 
   validateForm = () => {
+    const { isLoading } = this.state;
     const { name } = this.state;
     const minCaracter = 3;
     const results = name.length >= minCaracter;
-    return results;
+
+    return results && !isLoading;
   };
 
   render() {
-    const { name, isLoading, redirect } = this.state;
+    const { name, isLoading } = this.state;
     return (
-      <div data-testid="page-login">
-        <form>
-          <input
-            type="text"
-            name="name"
-            value={ name }
-            data-testid="login-name-input"
-            placeholder="Digite seu Nome:"
-            onChange={ this.onInputChange }
-          />
-          <button
-            type="button"
-            data-testid="login-submit-button"
-            disabled={ !this.validateForm() }
-            onClick={ this.handleUserApi }
-          >
-            Entrar
-          </button>
-        </form>
-        {
-          !isLoading ? '' : (
-            <Loading />
-          )
-        }
+      <div className="allLogin">
+        {/* <img alt="background img" className="backgroundImg" /> */}
+        <div data-testid="page-loginn" className="allPageLogin">
+          <form className="page-login">
+            <img src={ logo } alt="project img" className="loginImg" />
+            <input
+              type="text"
+              name="name"
+              value={ name }
+              data-testid="login-name-input"
+              placeholder="Digite seu Nome:"
+              onChange={ this.onInputChange }
+              className="inputText"
+            />
 
-        {
-          redirect ? <Redirect to="/search" /> : (
-            <>
-            </>
-          )
-
-        }
+            <button
+              className="btn btn-primary loginButton"
+              type="submit"
+              data-testid="login-submit-button"
+              disabled={ !this.validateForm() }
+              onClick={ this.handleUserApi }
+            >
+              Entrar
+              { '  ' }
+              {
+                !isLoading ? '' : (
+                  <span
+                    className="spinner-border spinner-border-sm "
+                    role="status"
+                    aria-hidden="true"
+                  />
+                )
+              }
+              { ' ' }
+            </button>
+          </form>
+        </div>
       </div>
     );
   }
 }
+
+Login.propTypes = {
+  history: PropTypes.shape({
+    push: PropTypes.func.isRequired,
+  }).isRequired,
+};
 
 export default Login;

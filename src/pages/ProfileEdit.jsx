@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Header from '../Components/Header';
+import '../css/ProfileEdit.css';
 import { updateUser, getUser } from '../services/userAPI';
 
 class ProfileEdit extends Component {
@@ -50,6 +51,7 @@ class ProfileEdit extends Component {
 
   OnClickUpdateUser = async () => {
     const { name, email, image, description } = this.state;
+
     const { history } = this.props;
     const userObj = {
       name,
@@ -63,6 +65,7 @@ class ProfileEdit extends Component {
     });
 
     await updateUser(userObj);
+    // localStorage.setItem('user', JSON.parse(userObj));
 
     this.setState({
       isLoading: false,
@@ -75,67 +78,76 @@ class ProfileEdit extends Component {
     const { name, description, image, email } = this.state;
     return (
       <>
-        <Header />
-        <form data-testid="page-profile-edit">
-          <label htmlFor="name">
-            Nome:
-            <input
-              type="text"
-              data-testid="edit-input-name"
-              id="name"
-              name="name"
-              value={ name }
-              onChange={ this.onInputChange }
-            />
-          </label>
+        <div className="allProfileEdit">
+          <Header />
+        </div>
+        <div>
+          <form data-testid="page-profile-edit" className="page-profile-edit">
+            <label htmlFor="name">
+              Nome:
+              <input
+                type="text"
+                data-testid="edit-input-name"
+                id="name"
+                name="name"
+                value={ name }
+                onChange={ this.onInputChange }
+                className="input"
+              />
+            </label>
 
-          <label htmlFor="email">
-            Email:
-            <input
-              type="email"
-              data-testid="edit-input-name"
-              id="email"
-              name="email"
-              value={ email }
-              onChange={ this.onInputChange }
-            />
-          </label>
+            <label htmlFor="email">
+              Email:
+              <input
+                className="input"
+                type="email"
+                data-testid="edit-input-name"
+                id="email"
+                name="email"
+                value={ email }
+                onChange={ this.onInputChange }
+              />
+            </label>
 
-          <label htmlFor="description">
-            Descrição:
-            <input
-              type="text"
-              data-testid="edit-input-name"
-              id="description"
-              name="description"
-              value={ description }
-              onChange={ this.onInputChange }
-            />
-          </label>
+            <label htmlFor="description">
+              Descrição:
+              <textarea
+                className="input"
+                cols="25"
+                rows="3"
+                data-testid="edit-input-name"
+                id="description"
+                name="description"
+                value={ description }
+                onChange={ this.onInputChange }
+              />
+            </label>
 
-          <label htmlFor="img">
-            Imagem de Perfil:
-            <input
-              type="text"
-              data-testid="edit-input-image"
-              id="img"
-              alt="img"
-              name="image"
-              value={ image }
-              onChange={ this.onInputChange }
-              placeholder="insira um Link vãlido"
-            />
-          </label>
-          <button
-            type="button"
-            data-testid="edit-button-save"
-            disabled={ !this.verifyButton() }
-            onClick={ this.OnClickUpdateUser }
-          >
-            Salvar
-          </button>
-        </form>
-
+            <label htmlFor="img">
+              Imagem de Perfil:
+              <input
+                className="input"
+                type="text"
+                data-testid="edit-input-image"
+                id="img"
+                alt="img"
+                name="image"
+                value={ image }
+                onChange={ this.onInputChange }
+                placeholder="insira um Link vãlido"
+              />
+            </label>
+            <button
+              type="button"
+              data-testid="edit-button-save"
+              disabled={ !this.verifyButton() }
+              onClick={ this.OnClickUpdateUser }
+              className="btnEdit"
+            >
+              Salvar
+            </button>
+          </form>
+        </div>
       </>
     );
   }
