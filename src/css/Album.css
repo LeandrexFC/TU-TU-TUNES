@@ -72,6 +72,11 @@ audio {
   align-items: stretch;
 }
 
+.heart:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
 @media (max-width: 500px) { 
   .albums {
     z-index: 3;

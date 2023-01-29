@@ -32,7 +32,7 @@ class Profile extends Component {
         <div className="all-page-profile">
           <Header profile={ userInformations.image } />
         </div>
-        <div>
+        <div className="color">
           {
             isLoading ? <Loading /> : (
               <div data-testid="page-profile" className="page-profile">

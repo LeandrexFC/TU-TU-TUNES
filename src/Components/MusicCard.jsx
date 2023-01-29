@@ -66,6 +66,7 @@ class MusicCard extends Component {
         {
           isLoading ? <Loading /> : (
             <FontAwesomeIcon
+              className="heart"
               icon={ checked ? faHeartCircleCheck : faHeart }
               onChange={ () => {} }
               type="checkbox"
