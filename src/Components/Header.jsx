@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import Proptypes from 'prop-types';
 import { getUser } from '../services/userAPI';
 import Loading from '../pages/Loading';
 import logo from '../images/logo.png';
@@ -88,5 +89,9 @@ class Header extends Component {
     );
   }
 }
+
+Header.propTypes = {
+  profile: Proptypes.string.isRequired,
+};
 
 export default Header;
