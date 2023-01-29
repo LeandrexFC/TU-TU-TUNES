@@ -12,12 +12,6 @@ class Login extends Component {
     isLoading: false,
   };
 
-  componentDidMount() {
-    const test = localStorage.getItem('user');
-
-    console.log(test.name);
-  }
-
   handleUserApi = async (e) => {
     e.preventDefault();
     const { history } = this.props;
