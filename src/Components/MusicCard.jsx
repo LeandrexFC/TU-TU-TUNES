@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/media-has-caption */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -46,22 +47,17 @@ class MusicCard extends Component {
     const { music } = this.props;
     const { isLoading, checked } = this.state;
     const { trackName, previewUrl, trackId } = music;
+    console.log(previewUrl);
     return (
       <div className="allAlbumsCard">
         <p className="songName">
           { trackName }
         </p>
-        <audio
-          data-testid="audio-component"
-          src={ previewUrl }
-          controls
-          className="songCard"
-        >
-          <track kind="captions" className="songCard" />
-          O seu navegador não suporta o elemento
-          <code className="songCard">audio</code>
-          .
+        <audio controls className="songCard">
+          <source src={ previewUrl } type="audio/mp4" />
+          Seu navegador não suporta a tag de áudio.
         </audio>
+
         {
           isLoading ? <Loading /> : (
             <FontAwesomeIcon
