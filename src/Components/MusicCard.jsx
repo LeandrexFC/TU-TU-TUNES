@@ -31,7 +31,6 @@ class MusicCard extends Component {
     window.location.reload(true);
     const { music } = this.props;
     const { checked } = this.state;
-
     this.setState({
       checked: !checked,
     });

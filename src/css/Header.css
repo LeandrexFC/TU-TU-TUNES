@@ -4,7 +4,6 @@
   width: 100%;
   height: 100%;
   max-width: 250px;
-  max-height: 720px;
   left: 0px;
   top: 0px;
   background: #FFFFFF;
@@ -27,7 +26,7 @@
 
 .header-component {
   margin-left: 3vh;
-  height: 100vh;
+  height: 100%;
   /* width: 100vw; */
   display: flex;
   align-items: flex-start;

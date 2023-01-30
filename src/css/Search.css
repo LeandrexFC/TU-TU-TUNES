@@ -58,14 +58,18 @@ html {
 }
 
 .searchAlbums {
-  /* grid-gap: 20px; */
-  display: grid;
+  max-width: 100%;
+   display: grid; 
   grid-template-columns: repeat(3, 200px);
-  gap: 120px;
+  gap: 50px;
   position: absolute;
-  left: 50vh;
-  top: 55vh;
+  left: 70vh;
+  top: 40vh;
   background: #EFF3F9;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 50px;
 }
 
 .cardImg {

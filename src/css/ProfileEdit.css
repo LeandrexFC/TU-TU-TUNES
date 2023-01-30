@@ -41,6 +41,11 @@
   opacity: 0.5;
 }
 
+.color {
+  background-color: #EFF3F9;
+  width: 100%;
+}
+
 @media (max-width: 500px) { 
   .allProfileEdit {
     z-index: 3;
@@ -61,3 +66,4 @@
   }
 
 }
+

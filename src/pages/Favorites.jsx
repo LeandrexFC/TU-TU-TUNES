@@ -17,8 +17,7 @@ class Favorites extends Component {
     });
 
     const savedSongs = await getFavoriteSongs();
-    console.log(savedSongs);
-    // const test = savedSongs.map((songs) => songs.artistName);
+
     this.setState({
       isLoading: false,
       favoritesSongs: savedSongs,

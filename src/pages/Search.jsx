@@ -147,12 +147,12 @@ class Search extends Component {
                 >
                   { albums.collectionName }
 
+                  <img
+                    src={ albums.artworkUrl100 }
+                    alt={ albums.artistName }
+                    className="cardImg"
+                  />
                 </Link>
-                <img
-                  src={ albums.artworkUrl100 }
-                  alt={ albums.artistName }
-                  className="cardImg"
-                />
               </div>))}
           </ul>
         ) : (

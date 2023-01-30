@@ -65,7 +65,6 @@ class ProfileEdit extends Component {
     });
 
     await updateUser(userObj);
-    // localStorage.setItem('user', JSON.parse(userObj));
 
     this.setState({
       isLoading: false,
@@ -81,7 +80,7 @@ class ProfileEdit extends Component {
         <div className="allProfileEdit">
           <Header />
         </div>
-        <div>
+        <div className="color">
           <form data-testid="page-profile-edit" className="page-profile-edit">
             <label htmlFor="name">
               Nome:

@@ -30,6 +30,12 @@
   margin-bottom: 50px;
 }
 
+.color {
+  background-color: #EFF3F9;
+  width: 100%;
+}
+
+
 @media (max-width: 500px) { 
   .all-page-profile {
     z-index: 3;
@@ -51,6 +57,7 @@
 
   .color {
     background-color: #EFF3F9;
+    width: 100%;
   }
 
 }
