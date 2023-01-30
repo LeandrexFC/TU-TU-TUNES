@@ -26,6 +26,7 @@ class Album extends Component {
 
   render() {
     const { savedAlbumName, savedArtistname, fullAlbum, savedAlbumImg } = this.state;
+    console.log(fullAlbum.music);
     return (
       <>
         <div className="albums">

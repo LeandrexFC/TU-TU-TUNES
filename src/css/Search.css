@@ -83,7 +83,7 @@ html {
   width: 337.2px;
   height: 24.89px;
   top: 37vh;
-  right: 50vh;
+  right: 60vh;
   font-family: 'Epilogue';
   font-style: italic;
   font-weight: 300;
@@ -108,7 +108,7 @@ a:hover {
   list-style: none;
 }
 
-@media (max-width: 500px) { 
+@media (max-width: 760px) { 
   .page-search {
     z-index: 3;
     position: fixed;
@@ -126,5 +126,47 @@ a:hover {
     background-position: 30% 105%;
     background-size: cover;
   }
+
+  .searchAlbums {
+  max-width: 100%;
+   display: grid; 
+  grid-template-columns: repeat(2, 200px);
+  gap: 50px;
+  position: absolute;
+  left: 40vh;
+  top: 40vh;
+  background: #EFF3F9;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 50px;
+}
+
+.cardImg {
+  height: 100px;
+  width: 100px;
+}
+
+.inputSearch {
+  padding: 15px;
+  color: white;
+  max-width: 200px;
+  max-height: 40px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 23px;
+  margin-right: 5vh;
+}
+
+.collectionId {
+  color: #3D495C;
+  font-size: 13px;
+  text-transform: none;
+}
+
+.allArtistCard {
+  list-style: none;
+  font-size: 12px;
+}
+
 
 }
