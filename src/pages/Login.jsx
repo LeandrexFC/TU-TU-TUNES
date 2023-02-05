@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { Helmet } from 'react-helmet';
 import { createUser } from '../services/userAPI';
 import logo from '../images/logo.png';
 import '../css/Login.css';
@@ -48,6 +49,10 @@ class Login extends Component {
     const { name, isLoading } = this.state;
     return (
       <div className="allLogin">
+        <Helmet>
+          <title>TU-TU-TUNES</title>
+          <link rel="icon" href="./images/logo.png" />
+        </Helmet>
         {/* <img alt="background img" className="backgroundImg" /> */}
         <div data-testid="page-loginn" className="allPageLogin">
           <form className="page-login">
