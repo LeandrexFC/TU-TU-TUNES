@@ -1,13 +1,37 @@
-# :construction: README customizado em construção ! :construction:
-<!-- Olá, Tryber!
-Esse é apenas um arquivo inicial para o README do seu projeto no qual você pode customizar e reutilizar todas as vezes que for executar o trybe-publisher.
+<h1> TU-TU-TUNES 🎶 </h1>  
 
-Para deixá-lo com a sua cara, basta alterar o seguinte arquivo da sua máquina: ~/.student-repo-publisher/custom/_NEW_README.md
+<div>
+<h2> About: </h2><p>A music streaming platform that lets you search for your favorite artists and play their albums, add songs to your favorites, and edit your profile picture. </p>
+</div>
 
-É essencial que você preencha esse documento por conta própria, ok?
-Não deixe de usar nossas dicas de escrita de README de projetos, e deixe sua criatividade brilhar!
-:warning: IMPORTANTE: você precisa deixar nítido:
-- quais arquivos/pastas foram desenvolvidos por você; 
-- quais arquivos/pastas foram desenvolvidos por outra pessoa estudante;
-- quais arquivos/pastas foram desenvolvidos pela Trybe.
--->
+
+<h2>Features: </h2>
+<ul> 
+<li>Search for artists; </li>
+<li>Play album previews; </li>
+<li> Favorite songs; </li>
+<li>Edit profile picture. </li>
+
+</ul>
+
+🖼️ View:
+![image](https://user-images.githubusercontent.com/110482797/216839924-3e397eac-f4e4-409a-bb36-7039cec00a7a.png)
+
+<h2>💻 Technologies: </h2>
+
+<ul>
+<li>React </li>
+<li>React Router Dom </li>
+<li>HTML </li>
+<li> CSS</li>
+<li> JS</li>
+<li> API Requests</li>
+<li> Redux</li>
+</ul>
+
+</br>
+
+
+Credits:
+
+- [Trybe Course](https://www.betrybe.com/) for all knowledge.
