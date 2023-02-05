@@ -9,9 +9,7 @@
   max-height: 250px;
   left: 250px;
   top: 0px;
-  background: url('../images/29.png') no-repeat bottom center scroll;
-  background-position: 30% 105%;
-  background-size: cover;
+  background: #6141AC;
 }
 
 .allAlbum-top {
@@ -77,6 +75,7 @@ audio {
   opacity: 0.8;
 }
 
+
 @media (max-width: 500px) { 
   .albums {
     z-index: 3;
@@ -84,16 +83,11 @@ audio {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* position: fixed; */
     height: 100vh;
     width: 100%;
-    /* max-width: 1030px; */
     max-height: 220px;
     left: 180px;
     top: 0px;
-    background: url('../images/29.png') no-repeat bottom center scroll;
-    background-position: 30% 105%;
-    background-size: cover;
   }
 
 }

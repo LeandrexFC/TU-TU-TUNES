@@ -10,9 +10,7 @@
   
   left: 250px;
   top: 0px;
-  background: url('../images/29.png') no-repeat bottom center scroll;
-  background-position: 30% 105%;
-  background-size: cover;
+  background: #6141AC;
   text-align: center;
 } 
 
@@ -52,9 +50,5 @@
     max-height: 220px;
     left: 180px;
     top: 0px;
-    background: url('../images/29.png') no-repeat bottom center scroll;
-    background-position: 30% 105%;
-    background-size: cover;
   }
-
 }

@@ -15,9 +15,7 @@ html {
   max-height: 220px;
   left: 250px;
   top: 0px;
-  background: url('../images/29.png') no-repeat bottom center scroll;
-  background-position: 30% 105%;
-  background-size: cover;
+  background-color: #6141AC;
 }
 
 
@@ -26,13 +24,14 @@ html {
   color: white;
   max-width: 400px;
   max-height: 40px;
-  background: rgba(255, 255, 255, 0.5);
+  background: white;
   border-radius: 23px;
   margin-right: 5vh;
+  color: black;
 }
 
 .inputSearch::placeholder {
-  color: white;
+  color: #6141AC;
 }
 
 .inputButtonSearch {
@@ -40,7 +39,7 @@ html {
   color: white;
   max-width: 114px;
   max-height: 40px;
-  background: #00D5E2;
+  background: black;
   border-radius: 23px;
 }
 
@@ -122,9 +121,6 @@ a:hover {
     max-height: 220px;
     left: 180px;
     top: 0px;
-    background: url('../images/29.png') no-repeat bottom center scroll;
-    background-position: 30% 105%;
-    background-size: cover;
   }
 
   .searchAlbums {
@@ -152,7 +148,6 @@ a:hover {
   color: white;
   max-width: 200px;
   max-height: 40px;
-  background: rgba(255, 255, 255, 0.5);
   border-radius: 23px;
   margin-right: 5vh;
 }

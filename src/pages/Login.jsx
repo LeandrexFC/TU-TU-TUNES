@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-// import Loading from './Loading';
 import { createUser } from '../services/userAPI';
-// import trybetunes from '../images/29.png';
 import logo from '../images/logo.png';
 import '../css/Login.css';
 
