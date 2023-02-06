@@ -36,9 +36,9 @@
 
 
 
-<h3>Credits: </h3>
+<h4>Acknowledgements: </h4>
 
-- [Trybe Course](https://www.betrybe.com/) for all knowledge.
+- [Trybe Course](https://www.betrybe.com/) for the teachings.
 <br/>
 
-<p> Folder "Services" Created By Trybe. </p>
+<h5> Folder "Services" Created By Trybe. </h5>
